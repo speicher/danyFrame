@@ -1,0 +1,244 @@
+/* sales.css */
+.sales {
+
+}
+/******************************************
+* step_one
+******************************************/
+#changing-div {
+    width: 96%;
+    height: 100%;
+    overflow: hidden;
+    margin: 10px;
+    font-size: 12px;
+}
+
+#changing-div .rowBox>div {
+    float: left;
+}
+.rowBox {
+    width: 100%;
+    height: auto;
+    line-height: 30px;
+    padding: 5px 0;
+    overflow: hidden;
+    clear: both;
+}
+.rowBox .col-1 {
+    width: 78px;
+}
+.rowBox .col-2 {
+    width: 70%;
+    padding-right: 2%;
+}
+.rowBox .col-3 {
+    width: auto;
+}
+.rowBox .line {
+    padding: 0 1%;
+}
+.rowBox .ipt {
+    display: inline-block;
+    height: 30px;
+    font-size: inherit;
+    color: #666666;
+}
+.rowBox .btn {
+    padding: 5px 10px;
+}
+.rowBox .layout-size-auto {
+    border: 1px solid #999999;
+}
+.rowBox .layout-size-auto .ipt {
+    border: 0 none;
+    width: 99%;
+}
+.rowBox .layout-size-auto textarea {
+    height: 120px;
+    overflow: auto;
+}
+.rowBox div.ipt-search-box>i {
+    top: 8px;
+}
+
+#changing-div .sales-icon,
+#changing-div .sales-icon i {
+    background: url("../images/sales_step2.png") scroll no-repeat;
+    cursor:pointer;
+}
+
+#settings {
+    width: 100%
+    height: auto;
+    overflow: hidden;
+    background: #D5E9E5;
+}
+.line {
+    overflow: hidden;
+    border: 0 none;
+    background: url("../images/sales_line_green.gif") scroll repeat-x 0 0;
+}
+
+.form-tb tr {
+	width: 60%;
+    height: 50px;
+}
+
+.form-tb input {
+	width: 120px;
+}
+
+#settings {
+    height: 50px;
+    margin: 1px 0;
+    overflow: hidden;
+}
+#settings .rowBox {
+    margin-left: auto;
+    margin-right: auto;
+}
+#settings .settings-expand-collapse span.sales-icon.expand {
+    background-position: -34px -66px;
+}
+#settings .settings-expand-collapse span.sales-icon.collapse {
+    background-position: -51px -66px;
+}
+#settings_order {
+    width: 100%;
+    height: 25px;
+    margin: 0 auto;
+    position: relative;
+}
+#settings_order>div {
+    position: absolute;
+}
+#settings_order .order-1 {
+	width: 99px;
+    height: 25px;
+    line-height: 25px;
+    color: #FFFFFF;
+    text-align: center;
+    background-position: 0 -33px;
+}
+#settings_order .order-2 {
+	width: 99px;
+    height: 25px;
+    line-height: 25px;
+    color: #FFFFFF;
+    text-align: center;
+}
+#settings_order .order-3 {
+    width: 99px;
+    height: 25px;
+    line-height: 25px;
+    color: #FFFFFF;
+    text-align: center;
+}
+#settings_order .order-disable {
+	background-position: 0 -100px;
+}
+#settings_order .order-able {
+	background-position: 0 -33px;
+}
+
+#settings_order .order-1 {
+    left: 0;
+}
+#settings_order .order-2 {
+    left: 200px;
+}
+#settings_order .order-3 {
+    left: 400px;
+}
+#settings_order .order-cg.cg-1 {
+    left: 130px;
+}
+#settings_order .order-cg.cg-2 {
+    left: 330px;
+}
+#settings_order .order-cg {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+}
+#settings_order .order-cg span {
+    display: block;
+}
+#settings_order .order-cg span.sales-icon {
+    width: 26px;
+    height: 26px;
+    margin: 0px auto;
+    cursor: pointer;
+    background-position: -68px -66px;
+}
+#settings_order .order-cg span.sales-text {
+    width: 100%;
+    line-height: 24px;
+    color: #496B65;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
+.div-data{
+	
+}
+
+.div-data{
+	background: #CCC;
+    width: 100%;
+    height: auto;
+    line-height: 30px;
+    padding: 5px 0;
+    overflow: hidden;
+}
+
+.region-south {
+    height: 50px;
+    padding: 10px;
+    text-align:right;
+    border-top:1px solid #DDD;
+}
+.region-south button {
+    float: right; 
+    margin-left: 1%;
+    width: 100px;
+}
+
+
+
+/*--------------------------**/
+
+.div_border{
+	position:reletive;
+	border: dashed 1px #3FB3A3; 
+	width: 98%; 
+	margin-left : 5px; 
+}
+
+.title_font{
+	color : black;
+	font-size :14px;
+	position: relative; 
+	top: -10px; 
+	left: 10px; 
+	background-color: #D5E9E5
+}
+
+.div-table{
+	width:98%;
+	background-color:#8A8A8A;
+}
+
+.div-lable{
+	float:left;  
+	margin-top:10px; 
+	width:12%;
+}
+
+.div-input{
+	float:left;
+	margin-top:10px;
+	width:13%;
+}

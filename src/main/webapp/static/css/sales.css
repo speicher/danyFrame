@@ -1,0 +1,949 @@
+/* sales common */
+.sales-layer {
+    width: auto;
+    height: auto;
+    min-width:250px;
+    font-size: 12px;
+    overflow: hidden;
+}
+.sales-layer-bd {
+    padding: 8px;
+}
+.sales-layer-bd ul li {
+    line-height: 25px;
+    cursor: pointer;
+}
+.sales-layer-bd ul li:hover {
+    background: #D5E9E5;
+}
+.sales-layer-ft {
+    padding: 5px 8px;
+    background-color: #F7F7F7;
+    border-top: 1px solid #DDD;
+    text-align: center;
+}
+.sales-layer-ft a{
+    line-height:20px;
+}
+.layout-size-auto {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.sales-border-radius {
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+/* sales.css */
+.sales {
+
+}
+.sales-btn {
+    color: #FFFFFF;
+    background: #547A75;
+    background-repeat: repeat-x;
+    background: -webkit-linear-gradient(top,#547A75 0,#547A75 100%);
+    background: -moz-linear-gradient(top,#547A75 0,#547A75 100%);
+    background: -o-linear-gradient(top,#547A75 0,#547A75 100%);
+    background: linear-gradient(to bottom,#547A75 0,#547A75 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#547A75,endColorstr=#547A75,GradientType=0);
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #bbb;
+}
+/**
+.sales-btn:hover {
+    background-repeat: repeat-x;
+    background: #AFAFAF;
+    background: -webkit-linear-gradient(top,#999999 0,#AFAFAF 100%);
+    background: -moz-linear-gradient(top,#999999 0,#AFAFAF 100%);
+    background: -o-linear-gradient(top,#999999 0,#AFAFAF 100%);
+    background: linear-gradient(to bottom,#999999 0,#AFAFAF 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#999999,endColorstr=#AFAFAF,GradientType=0);
+}**/
+.sales-btn:active {
+    background-repeat: repeat-x;
+    background: #999999;
+    background: -webkit-linear-gradient(top,#AFAFAF 0,#999999 100%);
+    background: -moz-linear-gradient(top,#AFAFAF 0,#999999 100%);
+    background: -o-linear-gradient(top,#AFAFAF 0,#999999 100%);
+    background: linear-gradient(to bottom,#AFAFAF 0,#999999 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#AFAFAF,endColorstr=#999999,GradientType=0);
+}
+
+.sales-btn-green {
+    color: #FFFFFF;
+    background: #139a88;
+    background-repeat: repeat-x;
+    background: -webkit-linear-gradient(top,#5acabb 0,#139a88 100%);
+    background: -moz-linear-gradient(top,#5acabb 0,#139a88 100%);
+    background: -o-linear-gradient(top,#5acabb 0,#139a88 100%);
+    background: linear-gradient(to bottom,#5acabb 0,#139a88 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#5acabb,endColorstr=#139a88,GradientType=0);
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.region-north {
+    color: #999;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    font-family: "Microsoft Yahei";
+}
+.region-north strong {
+    font-weight: bold;
+    color: #4A6D68;
+}
+.region-center {
+    /*margin: 0 10px;*/
+}
+.region-south {
+    height: 30px;
+    padding: 10px;
+    text-align:right;
+    border-top:1px solid #DDD;
+}
+.region-south button {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.sales-tabs-hd {
+    width: 100%;
+    height: 38px;
+    line-height: 32px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid #139a88;
+}
+.sales-tabs-hd li {
+    float: left;
+    position: absolute;
+    bottom: -6px;
+    width: 120px;
+    height: inherit;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'microsoft yahei';
+}
+.sales-tabs-hd li {
+    background: #DBDBDB;
+    background: -webkit-linear-gradient(top,#E7E7E7 0,#DBDBDB 100%);
+    background: -moz-linear-gradient(top,#E7E7E7 0,#DBDBDB 100%);
+    background: -o-linear-gradient(top,#E7E7E7 0,#DBDBDB 100%);
+    background: linear-gradient(to bottom,#E7E7E7 0,#DBDBDB 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E7E7E7,endColorstr=#DBDBDB,GradientType=0);
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+.sales-tabs-hd li.steps-one {
+    left: 20px;
+}
+.sales-tabs-hd li.steps-two {
+    left: 142px;
+}
+.sales-tabs-hd li.steps-three {
+    left: 264px;
+}
+.sales-tabs-hd li.steps-four {
+    left: 386px;
+}
+.sales-tabs-hd li.steps-five {
+    left: 508px;
+}
+.sales-tabs-hd li.steps-six {
+    left: 630px;
+}
+.sales-tabs-hd li.steps-seven {
+    left: 752px;
+}
+.sales-tabs-hd li.steps-eight {
+    left: 874px;
+}
+.sales-tabs-hd li.current {
+    z-index: 9;
+    background-repeat: repeat-x;
+    background: #139a88;
+    background: -webkit-linear-gradient(top,#5acabb 0,#139a88 100%);
+    background: -moz-linear-gradient(top,#5acabb 0,#139a88 100%);
+    background: -o-linear-gradient(top,#5acabb 0,#139a88 100%);
+    background: linear-gradient(to bottom,#5acabb 0,#139a88 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#5acabb,endColorstr=#139a88,GradientType=0);
+}
+.sales-tabs-hd li.current a {
+    color: #FFFFFF;
+}
+.sales-tabs-hd li.current>span {
+    display: block;
+    float: left;
+    height: 32px;
+}
+.sales-tabs-hd li.current span.tCenter {
+    width: 100%;
+}
+.sales-tabs-hd li.current span.tLeft,
+.sales-tabs-hd li.current span.tRight {
+    width: 15px;
+    height: 12px;
+    margin-top: 20px;
+    overflow: hidden;
+    background: url("../images/sales_tab.png") scroll no-repeat;
+}
+.sales-tabs-hd li.current span.tLeft {
+    margin-left: -15px;
+    background-position: 0 bottom;
+}
+.sales-tabs-hd li.current span.tRight {
+    margin-right: -15px;
+    background-position: -15px bottom;
+}
+.sales-tabs-bd {
+    height: 1000px;
+}
+
+/******************************************
+* step_one
+******************************************/
+#step_one,
+#step_two {
+    width: 96%;
+    height: auto;
+    overflow: hidden;
+    margin: 10px;
+    font-size: 14px;
+}
+#step_one .rowBox>div,
+#step_two .rowBox>div {
+    float: left;
+}
+.rowBox {
+    width: 100%;
+    height: auto;
+    /**
+    -- line-height: 30px;**/
+    padding: 5px 0;
+    overflow: hidden;
+    clear: both;
+}
+.rowBox .col-1 {
+    width: 78px;
+}
+.rowBox .col-2 {
+    width: 70%;
+    padding-right: 2%;
+}
+.rowBox .col-3 {
+    width: auto;
+}
+.rowBox .line {
+    padding: 0 1%;
+}
+.rowBox .ipt {
+    display: inline-block;
+    height: 30px;
+    font-size: inherit;
+    color: #666666;
+}
+.rowBox .btn {
+    padding: 5px 10px;
+}
+.rowBox .layout-size-auto {
+    border: 1px solid #999999;
+}
+.rowBox .layout-size-auto .ipt {
+    border: 0 none;
+    width: 99%;
+}
+.rowBox .layout-size-auto textarea {
+    height: 120px;
+    overflow: auto;
+}
+.rowBox div.ipt-search-box>i {
+    top: 8px;
+}
+
+.shop_list {
+    width: auto;
+    height: 120px;
+    padding: 8px 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.shop_list li {
+    width: 50%;
+    line-height: 24px;
+    float: left;
+    text-indent: 1.2em;
+    font-size: 12px;
+}
+
+.customer>li {
+    width: 33.333333%;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+.customer>li>*{
+    display: block;
+    float: left;
+}
+.customer li input[type=checkbox] {
+    margin-left: 5px;
+}
+.customer li input[type=checkbox],
+.customer li .layer {
+    width: 16px;
+    height: 16px;
+    margin-top: 7px;
+}
+.customer li .layer {
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.customer li .text {
+    text-indent: .5em;
+}
+.customer li .sales-layer ul.layer-list * {
+    padding: 0;
+    margin: 0;
+}
+.day {
+	border:1px solid #FFFFFF;
+}
+
+/******************************************
+* step_two
+******************************************/
+#step_two .sales-icon,
+#step_two .sales-icon i {
+    background: url("../images/sales_step2.png") scroll no-repeat;
+    cursor:pointer;
+}
+#template {
+    color: #FFFFFF;
+    background: #4DBBAD;
+}
+#template .col-1 {
+    text-align: right;
+}
+#template .col-2 {
+    width: 86%;
+}
+#template .col-2 .list {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+#template .col-2 .list li {
+    width: 12%;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 1px;
+    text-indent: .5em;
+    color: #333333;
+    cursor: pointer;
+    background: #FFFFFF;
+}
+#template .col-2 .list li .sales-icon {
+    width: 8px;
+    height: 8px;
+    float: right;
+    margin-top: 11px;
+    margin-right: 8px;
+    background-position: -130px 0;
+}
+#template .col-2 .list li.current {
+    color: #FFFFFF;
+    background: #373535;
+}
+#template .col-2 .list li.current .sales-icon {
+    background-position: -130px -8px;
+}
+#template .btn-expand-collapse {
+    float: right;
+    width: 78px;
+    height: 36px;
+    margin-top: -20px;
+    margin-right: 20px;
+    position: relative;
+    background: #4DBBAD;
+}
+#template .btn-expand-collapse .wrapper {
+    width: inherit;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    bottom: 5px;
+    cursor: pointer;
+}
+#template .btn-expand-collapse span {
+    display: block;
+    float: left;
+}
+#template .btn-expand-collapse span.icon-expand,
+#template .btn-expand-collapse span.icon-collapse {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    margin-left: 15px;
+}
+#template .btn-expand-collapse span.sales-text {
+    margin-left: 5px;
+}
+#sales-details {
+    width: 90%;
+    margin: 0 auto;
+    float: none !important;
+}
+#mustDo {
+    padding: 10px 0;
+}
+#mustDo .col-1 {
+    text-align: center;
+}
+#mustDo .col-2 {
+    width: auto;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+#properties,
+#settings {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #D5E9E5;
+}
+#properties .group-rowBox,
+#preferentials .group-rowBox {
+    position: relative;
+    padding-top: 15px;
+}
+#properties .line,
+#settings .line {
+    width: 86%;
+    height: 1px;
+    line-height: 1px;
+    padding: 0;
+    margin: 0 0 0 10px;
+    clear: both;
+    margin-top: 15px;
+    overflow: hidden;
+    border: 0 none;
+    background: url("../images/sales_line_green.gif") scroll repeat-x 0 0;
+}
+#properties .col-1,
+#properties .col-2,
+#properties .col-3 {
+    height: 30px;
+}
+#properties .col-1 {
+    padding: 0 10px;
+}
+#properties .col-2 {
+    width: auto;
+}
+#properties .col-1 strong.sales-text-l2 {
+    display: block;
+    line-height: 16px;
+}
+#properties .list {
+    width: 100%;
+    height: 32px;
+    overflow: hidden;
+}
+#properties .list li {
+    width: 200px;
+    height: inherit;
+    font-size: 12px;
+    float: left;
+}
+#properties .list li .ipt {
+    width: 68px;
+    height: 26px;
+    line-height: 26px;
+}
+#properties .list li .combo-text {
+    float: left;
+    text-indent: 4px;
+}
+#properties .sales-del-row {
+    position: absolute;
+    left: 80%;
+    top: 20px;
+    width: 110px;
+    height: 34px;
+    line-height: 34px;
+    cursor: pointer;
+}
+#properties .sales-del-row .sales-icon {
+    float: left;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-right: 5px;
+    background-position: 0 -66px;
+}
+#properties button.sales-add-row {
+    width: 112px;
+    height: 33px;
+    border: 0 none;
+    text-align: left;
+    text-indent: 8px;
+    color: #FFFFFF;
+    margin: 20px 10px;
+    cursor: pointer;
+    background-position: 0 0;
+}
+#properties button.sales-add-row .sales-icon {
+    width: 100%;
+    height: inherit;
+    display: block;
+}
+#settings {
+    height: 50px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+#settings .rowBox {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#settings .settings-expand-collapse {
+    width: 200px;
+    height: 20px;
+    margin: 15px;
+    float: left;
+    overflow: hidden;
+}
+#settings .settings-expand-collapse span.sales-text {
+    line-height: 20px;
+    float: left;
+    margin-right: 5px;
+}
+#settings .settings-expand-collapse span.sales-icon {
+    display: inline-block;
+    width: 17px;
+    height: 21px;
+    cursor: pointer;
+}
+#settings .settings-expand-collapse span.sales-icon.expand {
+    background-position: -34px -66px;
+}
+#settings .settings-expand-collapse span.sales-icon.collapse {
+    background-position: -51px -66px;
+}
+#settings_order {
+    width: 600px;
+    height: 60px;
+    margin: 0 auto;
+    position: relative;
+}
+#settings_order>div {
+    position: absolute;
+}
+#settings_order .order-1 {
+	width: 128px;
+    height: 33px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+    background-position: 0 -33px;
+}
+#settings_order .order-2 {
+	width: 128px;
+    height: 33px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+}
+#settings_order .order-3 {
+    width: 128px;
+    height: 33px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+}
+#settings_order .order-disable {
+	background-position: 0 -100px;
+}
+#settings_order .order-able {
+	background-position: 0 -33px;
+}
+
+#settings_order .order-1 {
+    left: 0;
+}
+#settings_order .order-2 {
+    left: 200px;
+}
+#settings_order .order-3 {
+    left: 400px;
+}
+#settings_order .order-cg.cg-1 {
+    left: 130px;
+}
+#settings_order .order-cg.cg-2 {
+    left: 330px;
+}
+#settings_order .order-cg {
+    width: 70px;
+    height: 55px;
+    position: absolute;
+}
+#settings_order .order-cg span {
+    display: block;
+}
+#settings_order .order-cg span.sales-icon {
+    width: 26px;
+    height: 26px;
+    margin: 5px auto;
+    cursor: pointer;
+    background-position: -68px -66px;
+}
+#settings_order .order-cg span.sales-text {
+    width: 100%;
+    line-height: 24px;
+    color: #496B65;
+    font-size: 12px;
+    text-align: center;
+}
+#settings_order .sales-icon i {
+    display: block;
+    float: right;
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-position: -124px -16px;
+}
+#settings_properties.list li {
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+}
+#settings_properties.list li .sales-icon {
+    display: block;
+    float: left;
+    overflow: hidden;
+    width: 17px;
+    height: 21px;
+    margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#settings_properties.list li .sales-icon.expand {
+    background-position: -34px -66px;
+}
+#settings_properties.list li .sales-icon.collapse {
+    background-position: -51px -66px;
+}
+#settings_properties.list li .list {
+    padding-left: 30px;
+}
+#settings_properties.list li .list p {
+    font-size: 12px;
+    line-height: 2em;
+}
+.goods_button_disable  {
+	cursor:pointer;
+	background: url("../images/sales_step2.png") scroll repeat-x 0 -100px;
+}
+.goods_button_able  {
+	cursor:pointer;
+	background: url("../images/sales_step2.png") scroll repeat-x 0 -33px;
+}
+.goods_button {
+	width: 128px;
+    height: 33px;
+    position:absolute;
+    right:10px;
+    bottom:8px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+}
+.goods_button_2 {
+	width: 128px;
+    height: 33px;
+    position:absolute;
+    right:10px;
+    bottom:49px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor:pointer;
+    background: url("../images/sales_step2.png") scroll repeat-x 0 -33px;
+}
+.goods_button_3 {
+	width: 128px;
+    height: 33px;
+    position:absolute;
+    right:10px;
+    bottom:70px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+}
+.goods_button_4 {
+	width: 128px;
+    height: 33px;
+    position:absolute;
+    right:10px;
+    bottom:111px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor:pointer;
+}
+.goods_button_5 {
+	width: 128px;
+    height: 33px;
+    position:absolute;
+    right:148px;
+    bottom:8px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor:pointer;
+}
+.goods_button_6 {
+	width: 128px;
+    height: 33px;
+    position:absolute;
+    right:286px;
+    bottom:8px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor:pointer;
+    background: url("../images/sales_step2.png") scroll repeat-x 0 -33px;
+}
+.goods_button_7 {
+	width: 128px;
+    height: 33px;
+    position:absolute;
+    right:148px;
+    bottom:8px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+}
+.goods_button_8 {
+	width: 128px;
+    height: 33px;
+    position:absolute;
+    right:288px;
+    bottom:8px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+}
+.result_count {
+	width: 128px;
+    height: 33px;
+    bottom: 42px;
+    position:absolute;
+    line-height: 33px;
+    color: red;
+    text-align: center;
+}
+.goods_tabs {
+    width: 100%;
+    height: 50%;
+    line-height: 32px;
+    overflow: hidden;
+    position: relative;
+}
+.goods_tabs li {
+    float: left;
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    font-family: 'microsoft yahei';
+}
+.goods_tabs li .tLeft {
+	float: left;
+	padding-top:10px;
+	padding-left:5px;
+	width: 25%;
+}
+.goods_tabs li .tCenter {
+	float: left;
+	width: 70%;
+}
+
+.goods_tabs li.current {
+	background: #FB740A;
+}
+
+.goods_tabs li.steps-one {
+    top: 20px;
+    left : 10px;
+}
+.goods_tabs li.steps-two {
+    top: 80px;
+    left : 10px;
+}
+.goods_tabs li.steps-three {
+    top: 140px;
+    left : 10px;
+}
+.goods_tabs li.steps-four {
+    top: 200px;
+    left : 10px;
+}
+
+.goods_count {
+    position:absolute;
+    align:center;
+    right:428px;
+    bottom:1px;
+}
+.invertSelection {
+	position:absolute;
+    left:20px;
+    bottom:200px;
+    display:none;
+}
+
+
+.relations {
+	padding-left: 20px;
+	padding-top:5px;
+}
+.relations li {
+	padding-left: 20px;
+	padding-top:5px;
+}
+.rowline {
+	width: 98%;
+    height: 1px;
+    line-height: 1px;
+    padding: 0;
+    margin: 0 0 0 10px;
+    clear: both;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border: 0 none;
+    background: url("../images/sales_line_green.gif") scroll repeat-x 0 0;
+}
+.parameter_input {
+	ime-mode:disabled;
+}
+#settings_p .list li .ipt {
+    height: 21px;
+    width: 60px;
+}
+#preview {
+	width: 97%;
+    height: auto;
+    overflow: hidden;
+    background: #D5E9E5;
+    padding-left:20px;
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-top:10px;
+}
+.audit_button {
+	width: 128px;
+    height: 33px;
+    line-height: 33px;
+    float:right;
+    padding-right:10px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor:pointer;
+	background: url("../images/sales_step2.png") scroll repeat-x 0 -33px;
+}
+.audit_button_2 {
+	width: 128px;
+    height: 33px;
+    line-height: 33px;
+    float:right;
+    padding-right:10px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor:pointer;
+	background: url("../images/sales_step2.png") scroll repeat-x 0 -33px;
+}
+.audit_button_3 {
+	width: 128px;
+    height: 33px;
+    line-height: 33px;
+    float:right;
+    padding-right:10px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor:pointer;
+	background: url("../images/sales_step2.png") scroll repeat-x 0 -33px;
+}
+.text_color_green {
+	color: green;
+}
+.text_color_gray {
+	color: #C7C7C7;
+}
+.vip_button {
+	width: 128px;
+    height: 33px;
+    position:absolute;
+    left:10px;
+    top:5px;
+    line-height: 33px;
+    color: #FFFFFF;
+    text-align: center;
+}
+.view_border{
+	position:reletive;
+	border: dashed 1px #3FB3A3; 
+	width: 96%; 
+	margin: 10px; 
+}
+.view_font{
+	color : black;
+	font-size :14px;
+	position: relative; 
+	top: -10px; 
+	left: 10px; 
+	background-color: #D5E9E5
+}
+
+.view-table{
+	width:98%;
+	padding-left:20px;
+}
+.view-lable{
+	float:left;  
+	margin-top:10px; 
+	width:12%;
+	background-color:#8A8A8A;
+}
+.ipt2 {
+    display: inline-block;
+    height: 22px;
+    width:70px;
+    font-size: inherit;
+    color: #666666;
+}
+
+
+
+/******************************************
+* step_three
+******************************************/

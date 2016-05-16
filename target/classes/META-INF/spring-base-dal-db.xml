@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd"
+	default-autowire="byName">
+	
+	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${db.driverClass}" />
+		<property name="jdbcUrl" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+		
+		<!-- /** Maximum age of an unused connection before it is closed off. */ -->
+		<property name="partitionCount" value="${db.partitionCount}" />
+		
+		<property name="maxConnectionsPerPartition" value="${db.maxConnectionsPerPartition}" />
+		
+		<property name="minConnectionsPerPartition" value="${db.minConnectionsPerPartition}" />
+		
+		<property name="acquireIncrement" value="${db.acquireIncrement}" />
+		
+		<property name="poolAvailabilityThreshold" value="${db.poolAvailabilityThreshold}" />
+		
+		<property name="connectionTimeoutInMs" value="${db.connectionTimeoutInMs}" />
+		
+		<!-- /** Number of release-connection helper threads to create per partition. */ -->
+		<property name="releaseHelperThreads" value="${db.releaseHelperThreads}" />
+		
+		<!-- /** Number of statement release helper threads to create. */ -->
+		<property name="statementReleaseHelperThreads" value="${db.statementReleaseHelperThreads}" />
+		
+		<!-- /** A connection older than maxConnectionAge will be destroyed and purged from the pool. */ -->
+		<property name="maxConnectionAgeInSeconds" value="${db.maxConnectionAgeInSeconds}" />
+		
+		<!-- /** SQL statement to use for keep-alive/test of connection. */ -->
+		<property name="connectionTestStatement" value="${db.connectionTestStatement}" />
+		
+		<property name="idleMaxAgeInSeconds" value="${db.idleMaxAgeInSeconds}" />
+		
+		<!-- /** Connections older than this are sent a keep-alive statement. */ -->
+		<property name="idleConnectionTestPeriodInSeconds" value="${db.idleConnectionTestPeriodInSeconds}" />
+		
+		<!-- /** After attempting to acquire a connection and failing, try to connect these many times before giving up. */ -->
+		<property name="acquireRetryAttempts" value="${db.acquireRetryAttempts}" />
+		
+		<property name="acquireRetryDelayInMs" value="${db.acquireRetryDelayInMs}" />
+		
+		<property name="lazyInit" value="${db.lazyInit}" />
+		
+		<property name="disableJMX" value="${db.disableJMX}" />
+		
+		<property name="poolName" value="${db.poolName}" />
+		
+		<!-- /** Min no of prepared statements to cache. */ -->
+		<property name="statementsCacheSize" value="${db.statementsCacheSize}" />
+		
+		<property name="logStatementsEnabled" value="${db.logStatementsEnabled}" />
+		
+		<property name="queryExecuteTimeLimitInMs" value="${db.queryExecuteTimeLimit}" />
+	</bean>
+
+	<bean id="sqlSessionFactoryForLogistics" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="${mybatis.mappers}" />
+		<property name="typeHandlersPackage" value="${mybatis.typeHandler.package}" />
+	</bean>
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactoryForLogistics" />
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" order="2" />
+</beans>

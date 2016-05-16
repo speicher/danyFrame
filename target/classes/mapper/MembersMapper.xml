@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.danyShop.dal.database.MembersMapper" >
+  <resultMap id="BaseResultMap" type="com.danyShop.common.model.UserDto" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="member_id" property="memberId" jdbcType="VARCHAR" />
+    <result column="member_name" property="memberName" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="birth_date" property="birthDate" jdbcType="DATE" />
+    <result column="register_date" property="registerDate" jdbcType="DATE" />
+    <result column="member_level" property="memberLevel" jdbcType="CHAR" />
+    <result column="contect_no" property="contectNo" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="create_user" property="createUser" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_user" property="updateUser" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="member_pwd" property="memberPwd" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, member_id, member_name, gender, birth_date
+  , register_date, member_level, contect_no, address
+  , create_user, create_time, update_user, update_time, member_pwd, remark
+  </sql>
+  <sql id="condition" >
+    <if test="null!=params" >
+      <if test="null!=params.memberId and ''!=params.memberId" >
+         AND member_id = #{params.memberId}
+      </if>
+      <if test="null!=params.memberPwd and ''!=params.memberPwd" >
+         AND member_pwd = #{params.memberPwd}
+      </if>
+    </if>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    SELECT 
+    <include refid="Base_Column_List" />
+    FROM members
+    WHERE id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectCount" resultType="java.lang.Integer" >
+    SELECT COUNT(1) as s FROM members WHERE 1=1 
+    <include refid="condition" />
+  </select>
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="map" >
+    SELECT <include refid="Base_Column_List" />
+      FROM members 
+     WHERE 1=1 
+    <include refid="condition" />
+    <if test="orderByField != null and ''!=orderByField" >
+      ORDER BY ${orderByField}
+      <if test="orderByField" >
+        ${orderBy}
+      </if>
+    </if>
+     LIMIT #{page.startRowNum} ,#{page.pageSize} 
+  </select>
+  <select id="selectByParams" resultMap="BaseResultMap" parameterType="map" >
+    SELECT 
+    <include refid="Base_Column_List" />
+      FROM members 
+     WHERE 1=1 
+    <include refid="condition" />
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    DELETE FROM members
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByPrimarayKeyForModel" parameterType="com.danyShop.common.model.UserDto" >
+    DELETE FROM members
+    WHERE id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.danyShop.common.model.UserDto" >
+      INSERT INTO members
+		(member_id, member_name, gender, birth_date
+		, register_date, member_level, contect_no, address
+		, create_time, create_user, update_time, update_user, member_pwd, remark)
+	  VALUES 
+	    (#{memberId,jdbcType=VARCHAR}, #{memberName,jdbcType=VARCHAR}
+	    , #{gender,jdbcType=VARCHAR}, #{birthDate,jdbcType=DATE}, #{registerDate,jdbcType=DATE}
+	    , #{memberLevel,jdbcType=CHAR}, #{contectNo,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}
+	    , #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}
+	    , #{updateTime,jdbcType=TIMESTAMP}, #{memberPwd,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.danyShop.common.model.UserDto" >
+    INSERT INTO members
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="memberId != null" >
+        member_id,
+      </if>
+      <if test="memberName != null" >
+        member_name,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="birthDate != null" >
+        birth_date,
+      </if>
+      <if test="registerDate != null" >
+        register_date,
+      </if>
+      <if test="memberLevel != null" >
+        member_level,
+      </if>
+      <if test="contectNo != null" >
+        contect_no,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="memberPwd != null" >
+        member_pwd,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    <if test="memberId != null" >
+        #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="memberName != null" >
+        #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null" >
+        #{birthDate,jdbcType=DATE},
+      </if>
+      <if test="registerDate != null" >
+        #{registerDate,jdbcType=DATE},
+      </if>
+      <if test="memberLevel != null" >
+        #{memberLevel,jdbcType=CHAR},
+      </if>
+      <if test="contectNo != null" >
+        #{contectNo,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPwd != null" >
+        #{memberPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.danyShop.common.model.UserDto" >
+    UPDATE members
+    <set >
+      <if test="memberId != null" >
+        member_id = #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="memberName != null" >
+        member_name = #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null" >
+        birth_date = #{birthDate,jdbcType=DATE},
+      </if>
+      <if test="registerDate != null" >
+        register_date = #{registerDate,jdbcType=DATE},
+      </if>
+      <if test="memberLevel != null" >
+        member_level = #{memberLevel,jdbcType=CHAR},
+      </if>
+      <if test="contectNo != null" >
+        contect_no = #{contectNo,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPwd != null" >
+        member_pwd = #{memberPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    WHERE id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.danyShop.common.model.UserDto" >
+  UPDATE members
+	SET member_id = #{memberId,jdbcType=VARCHAR}
+	  , member_name = #{memberName,jdbcType=VARCHAR}
+	  , gender = #{gender,jdbcType=VARCHAR}
+	  , birth_date = #{birthDate,jdbcType=DATE}
+	  , register_date = #{registerDate,jdbcType=DATE}
+	  , member_level = #{memberLevel,jdbcType=CHAR}
+	  , contect_no = #{contectNo,jdbcType=VARCHAR}
+	  , address = #{address,jdbcType=VARCHAR}
+	  , create_time = #{createTime,jdbcType=TIMESTAMP}
+	  , create_user = #{createUser,jdbcType=VARCHAR}
+	  , update_time = #{updateTime,jdbcType=TIMESTAMP}
+	  , update_user = #{updateUser,jdbcType=VARCHAR}
+	  , member_pwd = #{memberPwd,jdbcType=VARCHAR}
+	  , remark = #{remark,jdbcType=VARCHAR}
+	WHERE id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

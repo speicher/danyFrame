@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"              xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:context="http://www.springframework.org/schema/context"    xmlns:jee="http://www.springframework.org/schema/jee" 
+	   xmlns:tx="http://www.springframework.org/schema/tx"              xmlns:cache="http://www.springframework.org/schema/cache"
+	   xmlns:c='http://www.springframework.org/schema/c'                xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd  
+	                      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	                      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd         
+	                      http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd   
+	                      http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd      
+	                      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+	             
+	<!-- 加载本工程配置 -->
+	<import resource="classpath:META-INF/spring-frame-conf.xml" />
+	             
+	<!-- 加载注解功能 -->
+	<aop:aspectj-autoproxy />
+	<context:spring-configured />
+	<context:annotation-config />
+	<tx:annotation-driven order="1"/>
+	<cache:annotation-driven />
+	
+	<!-- 扫描本工程bean -->
+	<context:component-scan base-package="com.danyShop.dal">
+	</context:component-scan>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- <property name="annotationClass" value="org.springframework.stereotype.Repository" 
+			/> -->
+		<property name="basePackage" value="com.danyShop.dal.database" />
+		<property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"></property>
+	</bean>
+	
+	<!-- 扫描base工程bean
+    <context:component-scan base-package="com.yougou.logistics.base.dal.database">
+        <context:include-filter type="annotation" expression="com.yougou.logistics.base.dal.database.CodingRuleMapper"/>
+        <context:exclude-filter type="annotation" expression="com.yougou.logistics.base.dal.database.BaseCrudMapper"/>
+    </context:component-scan>
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+       <property name="basePackage" value="com.yougou.logistics.xxx.dal.database,com.yougou.logistics.base.dal.database" />
+       <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"></property>
+    </bean> -->
+	
+	<!-- 声明使用注解式事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+
+   <!-- Redis Cache
+   <bean id='redisCache' class='cn.wonhigh.retail.mps.common.cache.RedisTemplateExt'>
+   	<constructor-arg index="0" ref="redisTemplate"/>
+   </bean>
+   
+   <bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate"
+		p:connection-factory-ref="jedisConnectionFactory">
+	</bean>
+	
+	<bean id="itemRedisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
+		p:connection-factory-ref="jedisConnectionFactory">
+		<property name="keySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
+		<property name="hashKeySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
+		<property name="hashValueSerializer">
+			<bean
+				class="cn.wonhigh.retail.mps.common.cache.ItemRedisSerializer" />
+		</property>
+	</bean> -->
+		
+   <!-- Redis Cache Manager
+   <bean
+        id='mps'
+        class='org.springframework.data.redis.cache.RedisCacheManager'
+        c:template-ref='redisTemplate' p:defaultExpiration='7200' 
+        p:usePrefix='true'>
+        <property name="expires">
+	        <map>
+	            <entry key="mps_catetory_tree" value="7200"/>                    
+	        </map>
+   		</property>
+   		<property name="cachePrefix" ref="myRedisCachePrefix"/>
+   </bean>
+   
+    <bean
+        id='myRedisCachePrefix'
+        class='org.springframework.data.redis.cache.DefaultRedisCachePrefix'
+        c:delimiter='_'/> -->
+        
+   <!-- dummy cacheManager
+   <bean id="cacheManager" 
+	   class="org.springframework.cache.support.CompositeCacheManager">
+	     <property name="cacheManagers"> 
+	       <list> 
+	         <ref bean="mps" /> 
+	       </list> 
+	     </property> 
+	     <property name="fallbackToNoOpCache" value="true" /> 
+   </bean>   --> 
+</beans>
